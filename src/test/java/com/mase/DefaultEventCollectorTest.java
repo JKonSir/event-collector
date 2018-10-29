@@ -2,13 +2,14 @@ package com.mase;
 
 import com.mase.eventcollector.impl.DefaultEventCollector;
 import com.mase.eventcollector.EventCollector;
+import com.mase.eventcollector.impl.InMemoryEventStorage;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.time.Instant;
 
-import static junit.framework.TestCase.assertEquals;
+import static org.testng.AssertJUnit.assertEquals;
 
 public class DefaultEventCollectorTest {
 
@@ -16,7 +17,7 @@ public class DefaultEventCollectorTest {
 
     @BeforeClass
     public void setUp() {
-        collector = new DefaultEventCollector();
+        collector = new DefaultEventCollector(new InMemoryEventStorage());
     }
 
     @Test(threadPoolSize = 10, invocationCount = 10000)

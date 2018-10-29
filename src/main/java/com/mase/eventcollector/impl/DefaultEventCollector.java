@@ -10,8 +10,8 @@ public class DefaultEventCollector implements EventCollector {
 
     private final EventStorage eventStorage;
 
-    public DefaultEventCollector() {
-        this.eventStorage = new InMemoryEventStorage();
+    public DefaultEventCollector(EventStorage eventStorage) {
+        this.eventStorage = eventStorage;
     }
 
     public void logEvent(long eventTime) {
