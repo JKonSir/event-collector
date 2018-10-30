@@ -1,4 +1,4 @@
-# Project Title
+# Event Collector
 
 Example project for Java Concurrency Practice
 
